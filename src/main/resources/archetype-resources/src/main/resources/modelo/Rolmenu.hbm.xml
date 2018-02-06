@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-01-2018 05:32:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="${groupId}.modelo.Rolmenu" table="rolmenu" catalog="${artifactId}" optimistic-lock="version">
+        <id name="idrolmenu" type="java.lang.Integer">
+            <column name="idrolmenu" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="menu" class="${groupId}.modelo.Menu" fetch="select">
+            <column name="idmenu" />
+        </many-to-one>
+        <many-to-one name="rol" class="${groupId}.modelo.Rol" fetch="select">
+            <column name="idrol" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

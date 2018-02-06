@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="#{resource['images/favicon.ico']}" rel="shortcut icon" type="image/x-icon"/>
+        <script src="#{resource['script/calendario.js']}" type="text/javascript"></script>
+    </h:head>
+    <h:body>
+        <table cellspacing="10px">
+            <tr>
+                <td id="top">
+                    <h:form id="idmenuItem"> 
+                        <p:growl id="messages" showDetail="true"/>
+                        <p:ajaxStatus onstart="PF('status').show()" oncomplete="PF('status').hide()"/>
+                        <p:dialog widgetVar="status" modal="true" draggable="false"
+                                  style="background-color: transparent; border-width: 0px;"
+                                  closable="false" resizable="false" showHeader="false" >
+                            <p:graphicImage  value="#{resource['imagenes/giphy.gif']}" height="150px"/>
+                        </p:dialog>
+                        <p:menubar style="font: bold larger Palatino;" toggleEvent="click">
+                            <p:submenu label="Administrar" icon="fa fa-cogs fa-fw">
+                                <p:submenu label="Usuarios" icon="ui-icon-person">
+                                    <p:menuitem id="iditem8" value="Usuarios" icon="fa fa-user fa-fw"
+                                                url="/faces/vistas/Usuarios.xhtml"/>
+                                    <p:menuitem id="iditem9" value="Roles" icon="fa fa-group fa-fw"
+                                                url="/faces/vistas/Rol.xhtml"/>
+                                    <p:menuitem id="iditem10" value="Menus" icon="fa fa-window-restore fa-fw"
+                                                url="/faces/vistas/Menu.xhtml"/>
+                                </p:submenu>
+                                <p:menuitem id="iditem5" value="Tarifas" icon="fa fa-money fa-fw"
+                                            url="/faces/vistas/Tarifas.xhtml"/>
+                                <p:menuitem id="iditem6" value="Conductores" icon="fa fa-male"
+                                            url="/faces/vistas/Conductor.xhtml"/>
+                                <p:menuitem id="iditem7" value="Equipos" icon="fa fa-truck fa-fw"
+                                            url="/faces/vistas/Equipo.xhtml"/>
+                            </p:submenu>
+                            <p:submenu label="Proveedores" icon="fa fa-shopping-cart fa-fw">
+                                <p:submenu label="Entregas" icon="fa fa-car fa-fw">
+                                    <p:menuitem id="iditem12" value="Programar" icon="ui-icon-pencil"
+                                                url="/faces/vistas/Programarecepcionitem.xhtml"/>
+                                    <p:menuitem id="iditem13" value="Programa" icon="ui-icon-search"
+                                                url="/faces/vistas/ProgramaEntrega.xhtml"/>
+                                </p:submenu>
+                                <p:submenu label="Retiros" icon="fa fa-truck fa-fw">
+                                    <p:menuitem id="iditem1" value="Solicitar" icon="ui-icon-pencil"
+                                                url="/faces/vistas/SolicitudRetiros.xhtml"/>
+                                    <p:menuitem id="iditem2" value="Status" icon="ui-icon-search"
+                                                url="/faces/vistas/EstatusRetiros.xhtml"/>
+                                </p:submenu>
+                            </p:submenu>
+                            <p:submenu label="Logística" icon="fa fa-exchange fa-fw">
+                                <p:menuitem id="iditem3" value="Ordenes de Recepción" icon="fa fa-hand-o-down fa-fw"
+                                            url="/faces/vistas/Or.xhtml"/>
+                                <p:menuitem id="iditem4" value="Ordenes de Despacho" icon="fa fa-hand-o-up fa-fw"
+                                            url="/faces/vistas/Od.xhtml"/>
+                                <p:menuitem id="iditem11" value="Estado de Patio" icon="fa fa-th-list fa-fw"
+                                            url="/faces/vistas/EstadoPatio.xhtml"/>
+                            </p:submenu>
+                            <p:submenu label="Transporte" icon="fa fa-truck fa-fw">
+                                <p:menuitem id="iditem14" value="Programar OT"
+                                            icon="fa fa-tablet fa-fw"
+                                            url="/faces/vistas/ot.xhtml"/>
+                                <p:menuitem id="iditem15" value="Programar OM"
+                                            icon="fa fa-calendar fa-fw"
+                                            url="/faces/vistas/om.xhtml"/>
+                                <p:submenu label="Combustible">
+                                    <p:menuitem id="iditem19" value="Registro Combustible"
+                                                url="/faces/vistas/Combustible.xhtml"/>
+                                </p:submenu>
+                            </p:submenu>
+                            <p:submenu label="RRHH" icon="fa fa-male fa-fw">
+                                <p:menuitem value="Programa Descansos" icon="fa fa-bed fa-fw"
+                                            url="/faces/vistas/ProgramaDescansos.xhtml"/>
+                                <p:menuitem value="Patron Descansos" icon="fa fa-calendar fa-fw"
+                                            url="/faces/vistas/SerieDescansos.xhtml"/>
+                                <p:menuitem value="Desviaciones Descansos" icon="fa fa-exclamation-circle fa-fw"
+                                            url="/faces/vistas/ProgramaDescansosDesviaciones.xhtml"/>
+                            </p:submenu>
+                            <p:submenu label="Mantención" icon="fa fa-wrench fa-fw">
+                                <p:menuitem  id="iditem17" value="Tipo Mantención"
+                                             url="/faces/vistas/TipoMantencion.xhtml" icon="fa fa-truck fa-fw"/>
+                                <p:menuitem  id="iditem18" value=" Mantención"
+                                             url="/faces/vistas/Mantencion.xhtml" icon="fa fa-wrench fa-fw"/>
+                                <p:menuitem  id="iditem20" value=" Status Mantención"
+                                             url="/faces/vistas/StatusMantencion.xhtml" icon="fa fa-camera fa-fw"/>
+                            </p:submenu>
+                            <p:submenu label="Sesion" icon="ui-icon-person">
+                                <p:menuitem  id="iditem16" value="Salir de #{loginBean.usuario.nombre}"
+                                             oncomplete="handleLoginRequest(xhr, status, args)"
+                                             icon="ui-icon-close" actionListener="#{loginBean.salir()}"/>
+                            </p:submenu>
+                        </p:menubar>
+                        <td>
+                            <!--<img src="#{resource['images/MarshallMoffat.jpg']}"/>-->
+                        </td>
+                    </h:form>
+                </td>
+            </tr>
+            <tr>
+                <td id="content" colspan="2">
+                    <ui:insert name="content">Content</ui:insert>
+                </td>
+            </tr>
+        </table>
+    </h:body>
+    <link href="#{resource['css/estilosturnos.css']}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+        function handleLoginRequest(xhr, status, args) {
+            if (!args.loggedOut) {
+                location.href = args.ruta;
+            }
+        }
+    </script>
+</html>

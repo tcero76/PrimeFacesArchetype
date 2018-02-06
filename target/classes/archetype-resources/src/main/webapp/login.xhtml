@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Login</title>
+    </h:head>
+    <h:body>
+        <div class="conteiner">
+            <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+            <h:form id="formLogin">
+                <p:panel header="Ingresar Usuario y Clave"
+                         style="margin-bottom:20px;width: 350px; margin-left: auto;
+                         margin-right: auto;margin-top: 10%; height: auto;">
+                    <h:panelGrid columns="2" cellpadding="4">
+                        <div class="ui-g ui-fluid">
+                            <div class="ui-g-12 ui-md-4">
+                                <div class="ui-inputgroup">
+                                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                                    <p:inputText id="username"  value="#{loginBean.usuariolog}"
+                                                 required="true" placeholder="Usuario"/>
+                                </div>
+                            </div>
+                        <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                        <p:password id="password" value="#{loginBean.clavelog}"
+                                    required="true" placeholder="Clave"/>
+                        </div>
+                        <f:facet name="footer">
+                            <p:commandButton value="Login" update=":growl"
+                                             actionListener="#{loginBean.login(actionEvent)}"
+                                             oncomplete="handleLoginRequest(xhr, status, args)"/>
+                        </f:facet>
+                    </h:panelGrid>
+                </p:panel> 
+            </h:form>  
+        </div>
+        <script type="text/javascript">
+            function handleLoginRequest(xhr, status, args) {
+                if (!args.loggedIn) {
+                    jQuery('#formLogin')
+                            .effect("shake", {times: 5}, 100);
+                }
+                else {
+                    jQuery('#formLogin').hide();
+                    location.href = args.ruta;
+                }
+            }
+        </script>
+    </h:body>
+</html>
+

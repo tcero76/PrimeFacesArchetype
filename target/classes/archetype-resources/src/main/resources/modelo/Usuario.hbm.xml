@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-01-2018 05:32:22 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="${groupId}.modelo.Usuario" table="usuario" catalog="${artifactId}" optimistic-lock="version">
+        <id name="idusuario" type="java.lang.Integer">
+            <column name="idusuario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="rol" class="${groupId}.modelo.Rol" fetch="select">
+            <column name="idrol" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" unique="true" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="45" />
+        </property>
+        <set name="usuarios" table="usuario" inverse="true" lazy="true" fetch="select" >
+            <key>
+                <column name="idusuario" />
+            </key>
+            <one-to-many class="${groupId}.modelo.Usuario"/>
+        </set>
+    </class>
+</hibernate-mapping>

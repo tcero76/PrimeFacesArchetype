@@ -1,0 +1,35 @@
+<archetype xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0 http://maven.apache.org/xsd/archetype-1.0.0.xsd">
+  <id>quickstart</id>
+  <sources>
+    <source>src/main/java/bean/LoginBean.java</source>
+    <source>src/main/java/dao/DAOUsuario.java</source>
+    <source>src/main/java/utiles/AuthorizationListener.java</source>
+    <source>src/main/java/utiles/HibernateUtil.java</source>
+    <source>src/main/java/utiles/Configuracion.java</source>
+    <source>src/main/java/interfaces/ICrud.java</source>
+    <source>src/main/java/modelo/Usuario.java</source>
+    <source>src/main/java/modelo/Rol.java</source>
+    <source>src/main/java/modelo/Rolmenu.java</source>
+    <source>src/main/java/modelo/Menu.java</source>
+  </sources>
+  <resources>
+      <resource>src/main/resources/Hibernate/hibernate.cfg.xml</resource>
+      <resource>src/main/resources/Hibernate/hibernate.reveng.xml</resource>
+      <resource>src/main/resources/modelo/Menu.hbm.xml</resource>
+      <resource>src/main/resources/modelo/Rol.hbm.xml</resource>
+      <resource>src/main/resources/modelo/Usuario.hbm.xml</resource>
+      <resource>src/main/resources/modelo/Rolmenu.hbm.xml</resource>
+      <resource>src/main/resources/quartz/quartz-config.xml</resource>
+      <resource>src/main/resources/quartz.properties</resource>
+  </resources>
+  <siteResources>
+      <resource>src/main/webapp/Plantilla.xhtml</resource>
+      <resource>src/main/webapp/login.xhtml</resource>
+      <resource>src/main/webapp/WEB-INF/web.xml</resource>
+      <resource>src/main/webapp/WEB-INF/faces-config.xml</resource>
+      <resource>src/main/webapp/resources/script/calendario.js</resource>
+      <resource>src/main/webapp/META-INF/context.xml</resource>
+  </siteResources>
+</archetype>
