@@ -1,4 +1,4 @@
-﻿# CRUDArchetype
+﻿# PrimeFacesArchetype
 Este es un proyecto hecho para instalarlo en maven que permite generar una plantilla inicial con login para Primefaces con las librerías más populares que he conocido.
 
 # Instrucciones de Uso
