@@ -1,4 +1,4 @@
-﻿# Primefaces
+﻿# CRUDArchetype
 Este es un proyecto hecho para instalarlo en maven que permite generar una plantilla inicial con login para Primefaces con las librerías más populares que he conocido.
 
 # Instrucciones de Uso
@@ -22,7 +22,7 @@ Inicialmente, el proyecto está configurado para conectarse a una base de datos 
     create schema NombreDelProyecto;
     use NombreDelProyecto;
 
-Luego, configurar el archivo \src\main\resources\Hibernate\hibernate.cfg.xml con los "UsuarioMySql" y "ClaveMySql" correspondientes:
+Luego, modificar el archivo \src\main\resources\Hibernate\hibernate.cfg.xml con los "UsuarioMySql" y "ClaveMySql" correspondientes:
 
     <property name="hibernate.connection.username">UsuarioMySql</property>
     <property name="hibernate.connection.password">ClaveMySql</property>
