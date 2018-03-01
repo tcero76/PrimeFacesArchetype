@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 21-01-2018 05:32:22 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="${groupId}.modelo.Rol" table="rol" catalog="${artifactId}" optimistic-lock="version">
+    <class name="${groupId}.${artifactId}.modelo.Rol" table="rol" catalog="${artifactId}" optimistic-lock="version">
         <id name="idrol" type="java.lang.Integer">
             <column name="idrol" />
             <generator class="identity" />
@@ -15,13 +15,13 @@
             <key>
                 <column name="idrol" />
             </key>
-            <one-to-many class="${groupId}.modelo.Rolmenu" />
+            <one-to-many class="${groupId}.${artifactId}.modelo.Rolmenu" />
         </set>
         <set name="usuarios" table="usuario" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="idrol" />
             </key>
-            <one-to-many class="${groupId}.modelo.Usuario" />
+            <one-to-many class="${groupId}.${artifactId}.modelo.Usuario" />
         </set>
     </class>
 </hibernate-mapping>

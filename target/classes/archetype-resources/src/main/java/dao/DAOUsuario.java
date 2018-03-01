@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ${groupId}.dao;
+package ${groupId}.${artifactId}.dao;
 
-import interfaces.ICrud;
+import ${groupId}.${artifactId}.interfaces.ICrud;
 import java.util.List;
-import ${groupId}.modelo.Usuario;
+import ${groupId}.${artifactId}.modelo.Usuario;
 import org.hibernate.Query;
 import org.hibernate.Session;
 

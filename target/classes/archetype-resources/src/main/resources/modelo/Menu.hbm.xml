@@ -3,7 +3,7 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 21-01-2018 05:32:22 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="${groupId}.modelo.Menu" table="menu" catalog="${artifactId}" optimistic-lock="version">
+    <class name="${groupId}.${artifactId}.modelo.Menu" table="menu" catalog="${artifactId}" optimistic-lock="version">
         <id name="idmenu" type="java.lang.Integer">
             <column name="idmenu" />
             <generator class="identity" />
@@ -18,7 +18,7 @@
             <key>
                 <column name="idmenu" />
             </key>
-            <one-to-many class="${groupId}.modelo.Rolmenu" />
+            <one-to-many class="${groupId}.${artifactId}.modelo.Rolmenu" />
         </set>
     </class>
 </hibernate-mapping>

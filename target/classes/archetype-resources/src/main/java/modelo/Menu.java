@@ -1,4 +1,4 @@
-package ${groupId}.modelo;
+package ${groupId}.${artifactId}.modelo;
 // Generated 21-01-2018 05:32:20 PM by Hibernate Tools 4.3.1
 
 

@@ -3,12 +3,12 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 21-01-2018 05:32:22 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="${groupId}.modelo.Usuario" table="usuario" catalog="${artifactId}" optimistic-lock="version">
+    <class name="${groupId}.${artifactId}.modelo.Usuario" table="usuario" catalog="${artifactId}" optimistic-lock="version">
         <id name="idusuario" type="java.lang.Integer">
             <column name="idusuario" />
             <generator class="identity" />
         </id>
-        <many-to-one name="rol" class="${groupId}.modelo.Rol" fetch="select">
+        <many-to-one name="rol" class="${groupId}.${artifactId}.modelo.Rol" fetch="select">
             <column name="idrol" />
         </many-to-one>
         <property name="nombre" type="string">
@@ -21,7 +21,7 @@
             <key>
                 <column name="idusuario" />
             </key>
-            <one-to-many class="${groupId}.modelo.Usuario"/>
+            <one-to-many class="${groupId}.${artifactId}.modelo.Usuario"/>
         </set>
     </class>
 </hibernate-mapping>

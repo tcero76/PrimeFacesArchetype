@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ${groupId}.bean;
+package ${groupId}.${artifactId}.bean;
 
-import ${groupId}.dao.DAOUsuario;
-import ${groupId}.utiles.HibernateUtil;
-import ${groupId}.modelo.Usuario;
+import ${groupId}.${artifactId}.dao.DAOUsuario;
+import ${groupId}.${artifactId}.utiles.HibernateUtil;
+import ${groupId}.${artifactId}.modelo.Usuario;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.io.Serializable;
@@ -22,9 +22,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
-import ${groupId}.modelo.Menu;
-import ${groupId}.modelo.Rol;
-import ${groupId}.modelo.Rolmenu;
+import ${groupId}.${artifactId}.modelo.Menu;
+import ${groupId}.${artifactId}.modelo.Rol;
+import ${groupId}.${artifactId}.modelo.Rolmenu;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.primefaces.context.RequestContext;
